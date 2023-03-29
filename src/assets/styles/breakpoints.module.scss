@@ -1,0 +1,77 @@
+/**
+ designer breakpoints:
+ desktop 1920x1080    >  1600 (3xl)
+ desktop 1680x1050    <= 1600 (2xl)
+ macbook 1240x800     >= 1200 (xl)
+ tablet-h 1024x768    >= 992 (lg)
+ tablet-v 760x1024    >= 768 (md)
+ phone 480x760        >= 576 (sm)
+ phone 320x480        < 576 (xs)
+ */
+
+$media-breakpoints: (
+  xs: 320px,
+  xs-max: 479px,
+  sm: 480px,
+  sm-max: 759px,
+  md: 760px,
+  md-max: 991px,
+  lg: 992px,
+  lg-max: 1199px,
+  xl: 1200px,
+  xl-max: 1599px,
+  xxl: 1600px,
+);
+
+@function get-breakpoint($name, $breakpoints: $media-breakpoints) {
+  $value: map-get($breakpoints, $name);
+  @return if($value != 0, $value, null);
+}
+
+@mixin media-breakpoint-max($name) {
+  $max: get-breakpoint($name);
+  @if $max {
+    @media all and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-min($name) {
+  $min: get-breakpoint($name);
+  @if $min {
+    @media all and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint($name-min, $name-max) {
+  $min: get-breakpoint($name-min);
+  $max: get-breakpoint($name-max);
+  @if $min and $max {
+    @media all and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+:export {
+  xs: map-get($media-breakpoints, xs);
+  xsMax: map-get($media-breakpoints, xs-max);
+  sm: map-get($media-breakpoints, sm);
+  smMax: map-get($media-breakpoints, sm-max);
+  md: map-get($media-breakpoints, md);
+  mdMax: map-get($media-breakpoints, md-max);
+  lg: map-get($media-breakpoints, lg);
+  lgMax: map-get($media-breakpoints, lg-max);
+  xl: map-get($media-breakpoints, xl);
+  xlMax: map-get($media-breakpoints, xl-max);
+  xxl: map-get($media-breakpoints, xxl);
+}

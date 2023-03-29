@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 80px;
+
+  @include media-breakpoint-max(lg-max) {
+    display: block;
+    }
+
+  @include media-breakpoint-max(sm-max) {
+    margin-bottom: 40px;
+  }
+  }

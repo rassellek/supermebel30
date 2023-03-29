@@ -1,0 +1,77 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/fonts";
+
+.root {
+  position: relative;
+  z-index: $z-index-button;
+  padding: 20px 26px;
+  background: none;
+  color: $color-white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition-duration: $transition-duration;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+  }
+
+  &::before {
+    z-index: -2;
+    right: 0;
+  }
+
+  &::after {
+    z-index: -1;
+    right: 100%;
+    transition: right $transition;
+  }
+
+  &:hover:not(:disabled)::after {
+    right: 0;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  border: none;
+
+  &::before {
+    background: $color-primary;
+  }
+
+  &::after {
+    background: $color-red-dark;
+  }
+}
+
+.secondary {
+  border: 1px solid $color-white;
+
+  &::after {
+    background: $color-primary;
+  }
+
+  &:hover:not(:disabled) {
+    border: 1px solid $color-primary;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  pointer-events: none;
+}

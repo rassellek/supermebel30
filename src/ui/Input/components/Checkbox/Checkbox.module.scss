@@ -1,0 +1,77 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.input {
+  position: relative;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+
+  input {
+    appearance: none;
+  }
+
+  @include media-breakpoint-min(sm) {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+}
+
+.label {
+  margin-left: 0.75rem;
+  font-size: 12px;
+
+  @include media-breakpoint-min(sm) {
+    font-size: 15px;
+  }
+}
+
+.checkbox {
+  width: 100%;
+  height: 100%;
+  border: solid 1px $color-grey-2;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all $transition;
+
+  &.checked {
+    background-image: url("images/check.svg");
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+$input-colors: (
+  valid: $color-text-primary,
+  invalid: $color-red,
+);
+
+@each $state, $color in $input-colors {
+  .#{$state} {
+    .checkbox {
+      border-color: $color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: inherit;
+      }
+
+      &.checked {
+        border-color: $color;
+        background-color: $color;
+      }
+    }
+
+    .label {
+      color: $color;
+    }
+  }
+}

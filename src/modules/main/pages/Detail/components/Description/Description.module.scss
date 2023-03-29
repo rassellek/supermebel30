@@ -1,0 +1,124 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.outer {
+    margin-bottom: 100px;
+    }
+
+.inner {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+
+    @include media-breakpoint-max(lg-max) {
+        display: block;
+        margin-top: 50px;
+        }
+    }
+
+.app {
+    width: 50%;
+
+    @include media-breakpoint-max(lg-max) {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        }
+    }
+
+.detail {
+    width: 50%;
+    margin-left: 10%;
+
+    @include media-breakpoint-max(lg-max) {
+        width: 100%;
+        padding: 10%;
+        margin: 0;
+        }
+
+    button {
+        border-color: $color-grey-0;
+        color: $color-grey-0;
+        transition-duration: $transition-duration;
+        }
+
+    button:hover {
+        color: white;
+        }
+    }
+
+.title h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 45px;
+    letter-spacing: 0.5px;
+
+    @include media-breakpoint-max(lg-max) {
+        font-size: 1.5em;
+        }
+    }
+
+.title::after {
+    display: block;
+    width: 150px;
+    height: 2px;
+    margin: 20px 0 0;
+    background-color: #e43f3f;
+    content: "";
+    }
+
+.portfolio {
+    padding: 0;
+
+    @include media-breakpoint-max(lg-max) {
+        width: 100%;
+        }
+    }
+
+.portfolio li {
+    padding: 12px 35px 12px 0;
+    border-bottom: 1px solid #f1f3f6;
+    margin-bottom: 0;
+    background-color: transparent;
+    font-size: 16px;
+    list-style: none;
+    }
+
+
+.slick-slide {
+    display: flex !important;
+    max-height: 400px;
+    align-items: center;
+    justify-content: center;
+    }
+
+.slick-slide:focus {
+    outline: none;
+    }
+
+.slick-slide-mini {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    }
+
+.thumbnail-slider-wrap {
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+
+    @include media-breakpoint-max(lg-max) {
+        width: 70%;
+        margin-left: 15%;
+
+        img {
+            width: 75%;
+            height: auto;
+            }
+        }
+
+    button::before {
+        color: #777;
+        }
+    }

@@ -1,0 +1,11 @@
+@import "src/assets/styles/breakpoints.module";
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-max(lg-max) {
+        justify-content: center;
+        }
+    }

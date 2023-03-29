@@ -1,0 +1,55 @@
+@import "https://unpkg.com/normalize.css@8.0.1";
+@import "fonts";
+@import "variables.module";
+@import "breakpoints.module";
+
+html {
+  scroll-padding-top: 80px; /* height of sticky header */
+  }
+
+body {
+  color: $color-text-primary;
+  font-family: $font-family-base;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+
+  @include media-breakpoint-max(lg-max) {
+    font-size: 40px;
+    }
+
+  @include media-breakpoint-max(sm-max) {
+    font-size: 30px;
+  }
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 400;
+
+  @include media-breakpoint-max(lg-max) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-max(sm-max) {
+    font-size: 18px;
+  }
+}
+
+// disable autofill assets
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+

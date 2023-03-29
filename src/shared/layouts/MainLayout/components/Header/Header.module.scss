@@ -1,0 +1,56 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/mixins";
+
+.outer {
+  position: fixed;
+  z-index: $z-index-max;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid $color-white;
+  background-color: $color-background-ghost-header;
+}
+
+.inner {
+  display: flex;
+  height: $header-height;
+  align-items: center;
+  color: $color-white;
+  font-size: 20px;
+  font-weight: 300;
+
+  @include media-breakpoint-max(md-max) {
+    font-size: 14px;
+    }
+}
+
+.logo {
+  height: 100%;
+  margin-right: 20%;
+
+  img {
+    height: $header-height;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-breakpoint-max(md-max) {
+    display: none;
+    }
+
+  &Item {
+    color: white;
+
+    @include underline-white;
+
+    &_active {
+      border-bottom: 1px solid $color-white;
+    }
+  }
+}

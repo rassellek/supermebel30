@@ -1,0 +1,40 @@
+// === COLORS ===
+
+$color-black: #202525;
+$color-grey-0: #434553;
+$color-grey-1: #63667c;
+$color-grey-2: #8f99ab;
+$color-grey-3: #9eacc5;
+$color-grey-4: #abb4c6;
+$color-grey-5: #dae5fc;
+$color-grey-6: #e1e1ff;
+$color-grey-7: #f2f4ff;
+$color-grey-8: #f8faff;
+$color-white: #fff;
+$color-red: #d73838;
+$color-red-dark: #9e0011;
+$color-primary: $color-red;
+$color-text-primary: $color-black;
+$color-background-ghost-header: rgb(31 32 36 / 95%);
+$color-background-ghost: rgb(31 32 36 / 50%);
+$color-background-footer: #212226;
+
+// === OTHER ===
+
+$font-family-base: "Gilroy", sans-serif;
+$font-size-h1: 60px;
+$transition-function: ease-out;
+$transition-duration: 0.2s;
+$transition: $transition-duration $transition-function;
+$z-index-invisible: -1;
+$z-index-low: 10;
+$z-index-middle: 50;
+$z-index-max: 100;
+$z-index-button: 1;
+$header-height: 65px;
+$top-offset: $header-height + 40px;
+$footer-height: 300px;
+
+:export {
+  colorPrimary: $color-primary;
+}

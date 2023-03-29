@@ -1,0 +1,71 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.outer {
+    margin-bottom: 100px;
+
+    @include media-breakpoint-max(sm-max) {
+        margin-bottom: 40px;
+    }
+    }
+
+.inner {
+    display: flex !important;
+    justify-content: center;
+    padding-top: 0;
+
+    @include media-breakpoint-max(lg-max) {
+        display: block;
+        margin-top: 50px;
+        }
+    }
+
+.app {
+    width: 50% !important;
+    max-height: 500px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    transform:scale(1.75);
+
+    @include media-breakpoint-max(lg-max) {
+        width: 50% !important;
+        margin-top: 100px;
+        margin-bottom: 0;
+        transform:scale(1.5);
+        }
+
+    > div > div {
+        margin: 0;
+        }
+
+    button::before {
+        color: #777;
+        }
+    }
+
+.slick-slide {
+    display: flex !important;
+    justify-content: center;
+
+    img {
+        width: auto;
+
+        @include media-breakpoint-max(lg-max) {
+            max-width: 100%;
+            height:auto;
+            max-height: 400px;
+            margin-bottom: 25%;
+            }
+        }
+    }
+
+.slick-slide:focus {
+    outline: none;
+    }
+
+
+
+
+
+
+

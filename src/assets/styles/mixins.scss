@@ -1,0 +1,52 @@
+@import "variables.module";
+
+@mixin set-user-select-none() {
+  -webkit-touch-callout: none; /* iOS Safari */ /* Chrome/Safari/Opera */ /* Firefox */ /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+
+@mixin set-placeholder-styles($color: $color-grey-5) {
+  &::input-placeholder {
+    color: $color;
+
+    @include set-user-select-none;
+  }
+
+  &::placeholder {
+    color: $color;
+
+    @include set-user-select-none;
+  } /* Firefox 19+ */
+  &:placeholder {
+    color: $color;
+
+    @include set-user-select-none;
+  } /* Firefox 18- */
+  &:input-placeholder {
+    color: $color;
+
+    @include set-user-select-none;
+  }
+}
+
+@mixin hideArrowsInputTypeNumber() {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    appearance: textfield;
+  }
+}
+
+@mixin underline-white() {
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid $color-white;
+  }
+}

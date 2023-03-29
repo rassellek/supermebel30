@@ -1,0 +1,70 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/mixins";
+
+.outer {
+  padding: 40px 0;
+  background-color: $color-background-footer;
+  color: $color-white;
+
+  @include media-breakpoint-max(xl-max) {
+    padding: 5%;
+    }
+}
+
+.contacts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include media-breakpoint-max(lg-max) {
+    display: block;
+    }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 46px;
+    height: 46px;
+    margin-right: 20px;
+
+    @include media-breakpoint-max(lg-max) {
+      width: 30px;
+      height: 30px;
+      }
+  }
+}
+
+.tel {
+  width: 50%;
+
+  @include media-breakpoint-max(lg-max) {
+    width: 100%;
+    }
+  }
+
+.social {
+  display: flex;
+  margin-left: 50px;
+  column-gap: 10px;
+
+  img {
+    width: 40px;
+    height: 40px;
+
+    @include media-breakpoint-max(lg-max) {
+      width: 25px;
+      height: 25px;
+      margin-right: 0;
+      }
+  }
+}
+
+.rights {
+  margin-top: 5%;
+  color: $color-grey-2;
+}

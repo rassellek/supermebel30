@@ -1,0 +1,6 @@
+Redirect 301 /works https://supermebel30.ru/works.html
+Redirect 301 /about https://supermebel30.ru/about.html
+Redirect 301 /reviews https://supermebel30.ru/reviews.html
+Redirect 301 /contacts https://supermebel30.ru/contacts.html
+
+ErrorDocument 404 https://supermebel30.ru/index.html

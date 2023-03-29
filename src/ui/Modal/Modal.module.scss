@@ -1,0 +1,63 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.root {
+  position: fixed;
+  z-index: $z-index-max;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(51 51 51 / 60%);
+  cursor: auto;
+  font-family: $font-family-base;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: $transition-duration;
+
+  @include media-breakpoint-max(sm-max) {
+    display: block;
+  }
+}
+
+.content {
+  z-index: $z-index-max;
+  box-sizing: border-box;
+  background-color: white;
+  transform: scale(0.5);
+  transition-duration: $transition-duration;
+
+  @include media-breakpoint-max(xs-max) {
+    border-radius: 0;
+  }
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.close {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+

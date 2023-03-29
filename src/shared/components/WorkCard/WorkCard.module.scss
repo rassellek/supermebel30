@@ -1,0 +1,90 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/fonts";
+@import "src/assets/styles/breakpoints.module";
+
+.root {
+  display: flex;
+  width: 33.3%;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  font-family: Gilroy, sans-serif;
+  font-size: 20px;
+  line-height: 1.15;
+
+  @include media-breakpoint-max(lg-max) {
+    width: 100%;
+    padding: 3%;
+  }
+
+  .container {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    .title {
+      position: absolute;
+      z-index: 15;
+      bottom: 0;
+      display: flex;
+      width: 100%;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      padding-right: 60px;
+      padding-left: 25px;
+      background-color: $color-background-ghost;
+      color: $color-white;
+      font-size: 17px;
+    }
+
+    .title::after {
+      position: absolute;
+      z-index: 15;
+      top: 0;
+      right: 0;
+      display: flex;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+      content: url('data:image/svg+xml; utf8, <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="18px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M7.750,8.954 L0.069,1.608 L0.747,0.958 L9.585,9.413 L0.747,17.868 L0.069,17.219 L7.750,9.873 L8.232,9.413 L7.750,8.954 Z"/></svg>');
+      transition: all 0.4s ease 0s;
+    }
+  }
+}
+
+.container::after {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  content: "";
+  transition-duration: $transition-duration;
+}
+
+.container:hover::after {
+  background-color: $color-background-ghost;
+}
+
+.container:hover .title::after {
+  border-color: #e43f3f;
+  background-color: #e43f3f;
+}

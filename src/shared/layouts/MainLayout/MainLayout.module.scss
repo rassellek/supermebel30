@@ -1,0 +1,7 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/mixins";
+
+.content {
+    min-height: calc(100vh - $footer-height);
+}

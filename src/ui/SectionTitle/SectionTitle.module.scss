@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables.module";
+
+.root {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 200px;
+    border-bottom: 4px solid $color-primary;
+    content: "";
+    transform: translate(-50%);
+  }
+}

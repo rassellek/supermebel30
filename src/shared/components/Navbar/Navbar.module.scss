@@ -1,0 +1,46 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.outer {
+    padding-top: $top-offset;
+    }
+
+.inner {
+    color: $color-grey-2;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    a {
+        color: $color-grey-2;
+        cursor: pointer;
+        }
+
+    img {
+        width: 150px;
+        height: 100%;
+        }
+
+    h1 {
+        display: flex;
+        justify-content: space-between;
+        }
+
+    h2 {
+        font-size: 36px;
+
+        @include media-breakpoint-max(lg-max) {
+            font-size: 1.5em;
+            }
+        }
+
+    h2::after {
+        display: block;
+        width: 200px;
+        height: 2px;
+        margin: 25px 0 40px;
+        background-color: #e43f3f;
+        content: "";
+        }
+    }

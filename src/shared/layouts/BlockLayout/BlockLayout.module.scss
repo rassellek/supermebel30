@@ -1,0 +1,38 @@
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/variables.module";
+
+.outer {
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include media-breakpoint-max(xl-max) {
+    max-width: 1000px;
+  }
+
+  @include media-breakpoint-max(lg-max) {
+    max-width: 80%;
+  }
+
+  @include media-breakpoint-max(sm-max) {
+    max-width: 94%;
+  }
+}
+
+.title {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 200px;
+    border-bottom: 4px solid $color-primary;
+    content: "";
+    transform: translate(-50%);
+  }
+}

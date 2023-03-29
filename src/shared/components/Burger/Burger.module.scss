@@ -1,0 +1,139 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/fonts";
+@import "src/assets/styles/breakpoints.module";
+@import "src/assets/styles/mixins";
+
+.burger {
+  display: flex;
+  height: 50px;
+  flex-basis: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em;
+  color: #FFF;
+  font-size: 20px;
+
+  @include media-breakpoint-min(lg) {
+    display: none;
+    }
+  }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  &Item {
+    color: white;
+
+    @include underline-white;
+
+    &_active {
+      border-bottom: 1px solid $color-white;
+      }
+    }
+  }
+
+.links > li {
+  overflow: hidden;
+  margin: 0 1rem;
+  }
+
+.container {
+  display: none;
+  width: 30px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  }
+
+.toggle {
+  display: none;
+  }
+
+.button,
+.button::before,
+.button::after {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+.button::before {
+  margin-top: -8px;
+  content: "";
+  }
+
+.button::after {
+  margin-top: 8px;
+  content: "";
+  }
+
+.toggle:checked + .container .button::before {
+  margin-top: 0;
+  transform: rotate(405deg);
+  }
+
+.toggle:checked + .container .button {
+  background: rgb(255 255 255 / 0%);
+  }
+
+.toggle:checked + .container .button::after {
+  margin-top: 0;
+  transform: rotate(-405deg);
+  }
+
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    }
+
+  .links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: $header-height;
+    }
+
+  .links > li {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.5em 0;
+    margin: 0;
+    background-color: $color-background-ghost-header;
+    color: white;
+    }
+
+  .links > li:not(:last-child) {
+    border-bottom: 1px solid #FFF;
+    }
+
+  .toggle ~ .links li {
+    height: 0;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+  .toggle:checked ~ .links li {
+    height: 2.5em;
+    padding: 0.5em;
+    border-bottom: 1px solid #333;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  }

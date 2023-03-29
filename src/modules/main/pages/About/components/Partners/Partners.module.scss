@@ -1,0 +1,134 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.inner {
+  h1 {
+    display: flex;
+    justify-content: space-between;
+    }
+
+  h2 {
+    font-size: 36px;
+
+    @include media-breakpoint-max(lg-max) {
+      font-size: 1.5em;
+      }
+    }
+
+  h2::after {
+    display: block;
+    width: 200px;
+    height: 2px;
+    margin: 25px 0 40px;
+    background-color: #e43f3f;
+    content: "";
+    }
+  }
+
+.content {
+  box-sizing: border-box;
+  color: #202525;
+  font-family: Gilroy, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  text-align: justify;
+
+  @include media-breakpoint-max(lg-max) {
+    font-size: 1em;
+    }
+  }
+
+.center {
+  display: flex;
+  justify-content: center;
+
+  p {
+    width: 70%;
+    text-align: center;
+    }
+  }
+
+.wrappers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  div {
+    display: flex;
+    width: 25%;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-max(lg-max) {
+      width: 50%;
+      }
+    }
+  }
+
+.container1 {
+  border-right: 1px solid #bebebe;
+  border-bottom: 1px solid #bebebe;
+
+  @include media-breakpoint-max(lg-max) {
+    border-right: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
+    }
+  }
+
+.container2 {
+  border-bottom: 1px solid #bebebe;
+  }
+
+.container3 {
+  border-right: 1px solid #bebebe;
+  border-bottom: 1px solid #bebebe;
+  border-left: 1px solid #bebebe;
+
+  @include media-breakpoint-max(lg-max) {
+    border-right: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
+    border-left: none;
+    }
+  }
+
+.container4 {
+  border-bottom: 1px solid #bebebe;
+  }
+
+.container5 {
+  border-right: 1px solid #bebebe;
+
+  @include media-breakpoint-max(lg-max) {
+    border-bottom: 1px solid #bebebe;
+    }
+  }
+
+.container6 {
+  @include media-breakpoint-max(lg-max) {
+    border-bottom: 1px solid #bebebe;
+    }
+  }
+
+.container7 {
+  border-right: 1px solid #bebebe;
+  border-left: 1px solid #bebebe;
+
+  @include media-breakpoint-max(lg-max) {
+    border-left: none;
+    }
+  }
+
+.partners {
+  img {
+    width: 250px;
+    height: 100%;
+    padding: 10%;
+
+    @include media-breakpoint-max(lg-max) {
+      width: 150px;
+      }
+    }
+  }
+

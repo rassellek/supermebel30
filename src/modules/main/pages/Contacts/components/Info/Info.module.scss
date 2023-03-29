@@ -1,0 +1,193 @@
+@import "src/assets/styles/variables.module";
+@import "src/assets/styles/breakpoints.module";
+
+.inner {
+    @include media-breakpoint-max(lg-max) {
+        h2:first-child {
+            margin-top: -10%;
+            }
+        }
+
+
+    h2 {
+        margin-top: 50px;
+        font-size: 36px;
+
+        @include media-breakpoint-max(lg-max) {
+            font-size: 1.5em;
+            }
+        }
+
+    h2::after {
+        display: block;
+        width: 200px;
+        height: 2px;
+        margin: 25px 0 40px;
+        background-color: #e43f3f;
+        content: "";
+        }
+    }
+
+.line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    }
+
+.block {
+    display: grid;
+    margin-left: 25px;
+    }
+
+.content {
+    box-sizing: border-box;
+    align-items: center;
+    color: $color-black;
+    font-family: Gilroy, sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    text-align: justify;
+
+    @include media-breakpoint-max(lg-max) {
+        font-size: 1em;
+        }
+
+    button {
+        display: flex;
+        align-items: center;
+        border-color: $color-black;
+        margin-bottom: 25px;
+        color: $color-black;
+        font-family: Gilroy, sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        line-height: 1.4;
+        text-align: justify;
+        text-transform: none;
+        transition-duration: $transition-duration;
+
+        @include media-breakpoint-max(md-max) {
+            padding: 10px 13px;
+            }
+
+        .line {
+            margin-bottom: 0;
+            margin-left: 0;
+            }
+
+        .block {
+            text-align: start;
+
+            @include media-breakpoint-max(md-max) {
+                margin: 15px;
+                }
+            }
+
+        .white {
+            display: none;
+            width: 50px;
+            height: 50px;
+
+            @include media-breakpoint-max(md-max) {
+                width: 25px;
+                height: 25px;
+                }
+            }
+
+        .black {
+            @include media-breakpoint-max(md-max) {
+                width: 25px;
+                height: 25px;
+                }
+            }
+        }
+
+    button:hover {
+        color: $color-white;
+        fill: $color-white;
+
+        .black {
+            display: none;
+            }
+
+        .white {
+            display: block;
+            }
+        }
+    }
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    @include media-breakpoint-max(md-max) {
+        display: block;
+        }
+
+    .content {
+        width: 45%;
+
+        @include media-breakpoint-max(md-max) {
+            width: 100%;
+            }
+
+        button {
+            min-width: 100%;
+            max-width: 100%;
+            }
+        }
+    }
+
+.social{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    @include media-breakpoint-max(md-max) {
+        display: block;
+        }
+
+    .content {
+        width: 30%;
+
+        @include media-breakpoint-max(md-max) {
+            width: 100%;
+            }
+
+        button {
+            max-width: 100%;
+
+            @include media-breakpoint-max(md-max) {
+                width: 100%;
+                }
+            }
+        }
+    }
+
+.subtle {
+    display: flex;
+    margin-bottom: 50px;
+    font-weight: bold;
+    }
+
+.link {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+    }
+
+.map {
+    width: 50%;
+    height: 350px;
+    margin-top: 24px;
+
+    @include media-breakpoint-max(lg-max) {
+        width: 100%;
+        }
+    }
+
